@@ -1,0 +1,21 @@
+name: CI
+
+on:
+  push:
+    branches: ["main", "master"]
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Basic CI checks
+        run: |
+          echo "Running basic CI checks"
+          echo "Repository root content:"
+          ls -la
+          echo "No language-specific tests configured. Add steps for Node/Python/etc. as needed."
